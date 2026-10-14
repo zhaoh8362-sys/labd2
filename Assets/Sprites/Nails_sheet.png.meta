@@ -1,0 +1,459 @@
+fileFormatVersion: 2
+guid: e2c47427c2b818ed599761d7f28ad567
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3070496994483267865
+    second: Nails_sheet_0
+  - first:
+      213: -3397943319790122683
+    second: Nails_sheet_1
+  - first:
+      213: -6925348767697295333
+    second: Nails_sheet_2
+  - first:
+      213: -2282390814590528045
+    second: Nails_sheet_3
+  - first:
+      213: -4558031185728956517
+    second: Nails_sheet_4
+  - first:
+      213: 2299525184995611885
+    second: Nails_sheet_5
+  - first:
+      213: -1256743878279066739
+    second: Nails_sheet_6
+  - first:
+      213: 4360506133452438957
+    second: Nails_sheet_7
+  - first:
+      213: -4432417607438773889
+    second: Nails_sheet_8
+  - first:
+      213: 8446259535739233978
+    second: Nails_sheet_9
+  - first:
+      213: 5960415265330318859
+    second: Nails_sheet_10
+  - first:
+      213: -7299881472321370587
+    second: Nails_sheet_11
+  - first:
+      213: 765876316049462111
+    second: Nails_sheet_12
+  - first:
+      213: 9017960571372700073
+    second: Nails_sheet_13
+  - first:
+      213: 542806857110717981
+    second: Nails_sheet_14
+  - first:
+      213: -4037112952391553756
+    second: Nails_sheet_15
+  - first:
+      213: 7586432545812594808
+    second: Nails_sheet_16
+  - first:
+      213: 5579036090640365046
+    second: Nails_sheet_17
+  - first:
+      213: 2307036837329271294
+    second: Nails_sheet_18
+  - first:
+      213: -2574346174979425018
+    second: Nails_sheet_19
+  - first:
+      213: 6993371585941373433
+    second: Nails_sheet_20
+  - first:
+      213: -8173310268727687352
+    second: Nails_sheet_21
+  - first:
+      213: -8276507608172690571
+    second: Nails_sheet_22
+  - first:
+      213: -8142109303058598873
+    second: Nails_sheet_23
+  - first:
+      213: 3705126362882959884
+    second: Nails_sheet_24
+  - first:
+      213: 2315805273748969580
+    second: Nails_sheet_25
+  - first:
+      213: 6720072847287314745
+    second: Nails_sheet_26
+  - first:
+      213: -6236935491567674646
+    second: Nail_0
+  - first:
+      213: -8718590350971602233
+    second: Nail_1
+  - first:
+      213: 5551432524557069728
+    second: Nail_2
+  - first:
+      213: -123314623619039560
+    second: Nail_3
+  - first:
+      213: 8667475988861887718
+    second: Nail_4
+  - first:
+      213: 2920270302303355693
+    second: Nail_5
+  - first:
+      213: -5943179523360581298
+    second: Nail_6
+  - first:
+      213: 8416761382100797056
+    second: Nail_7
+  - first:
+      213: -6860741892814310977
+    second: Nail_8
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 1
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Nail_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aea15121734f179a0800000000000000
+      internalID: -6236935491567674646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nail_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ca7034d448510780800000000000000
+      internalID: -8718590350971602233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nail_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ad26c4e776aa0d40800000000000000
+      internalID: 5551432524557069728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nail_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8be739fc006e94ef0800000000000000
+      internalID: -123314623619039560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nail_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e427575d7f094870800000000000000
+      internalID: 8667475988861887718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nail_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d230ae02e52e68820800000000000000
+      internalID: 2920270302303355693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nail_6
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4997b936b5958da0800000000000000
+      internalID: -5943179523360581298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nail_7
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 086085312e75ec470800000000000000
+      internalID: 8416761382100797056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nail_8
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb17927299fb9c0a0800000000000000
+      internalID: -6860741892814310977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Nail_0: -6236935491567674646
+      Nail_1: -8718590350971602233
+      Nail_2: 5551432524557069728
+      Nail_3: -123314623619039560
+      Nail_4: 8667475988861887718
+      Nail_5: 2920270302303355693
+      Nail_6: -5943179523360581298
+      Nail_7: 8416761382100797056
+      Nail_8: -6860741892814310977
+      Nails_sheet_0: -3070496994483267865
+      Nails_sheet_1: -3397943319790122683
+      Nails_sheet_10: 5960415265330318859
+      Nails_sheet_11: -7299881472321370587
+      Nails_sheet_12: 765876316049462111
+      Nails_sheet_13: 9017960571372700073
+      Nails_sheet_14: 542806857110717981
+      Nails_sheet_15: -4037112952391553756
+      Nails_sheet_16: 7586432545812594808
+      Nails_sheet_17: 5579036090640365046
+      Nails_sheet_18: 2307036837329271294
+      Nails_sheet_19: -2574346174979425018
+      Nails_sheet_2: -6925348767697295333
+      Nails_sheet_20: 6993371585941373433
+      Nails_sheet_21: -8173310268727687352
+      Nails_sheet_22: -8276507608172690571
+      Nails_sheet_23: -8142109303058598873
+      Nails_sheet_24: 3705126362882959884
+      Nails_sheet_25: 2315805273748969580
+      Nails_sheet_26: 6720072847287314745
+      Nails_sheet_3: -2282390814590528045
+      Nails_sheet_4: -4558031185728956517
+      Nails_sheet_5: 2299525184995611885
+      Nails_sheet_6: -1256743878279066739
+      Nails_sheet_7: 4360506133452438957
+      Nails_sheet_8: -4432417607438773889
+      Nails_sheet_9: 8446259535739233978
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
