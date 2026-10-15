@@ -7,10 +7,20 @@ using UnityEngine;
 /// </summary>
 public class RhythmConveyor : MonoBehaviour
 {
-    [Header("Conveyor Settings")]
+    [Header("Conveyor Settings (Pixels)")]
     [SerializeField] private float _boardBaseY = 140f;
     [SerializeField] private float _nailY = 172f;
     [SerializeField] private float _hammerY = 212f;
+
+    [Header("Fine-Tuning Offsets (Pixels)")]
+    [Tooltip("Horizontal pixel offset applied to the hammer relative to the striking line.")]
+    [SerializeField] private float _hammerOffsetX = 8f;
+
+    [Tooltip("Horizontal pixel offset applied to each board block center to align holes with beats.")]
+    [SerializeField] private float _boardHoleOffsetX = -24f;
+
+    [Tooltip("Vertical half-height of the aim lines (spans from baseY - halfHeight to baseY + halfHeight).")]
+    [SerializeField] private float _aimLineHalfHeight = 90f;
 
     [Header("Aim Line Visuals")]
     [SerializeField] private LineRenderer _placeLine;
@@ -41,11 +51,50 @@ public class RhythmConveyor : MonoBehaviour
     public float NailY => _nailY;
     public HammerController Hammer => _hammer;
     public IReadOnlyList<NailInstance> SpawnedNails => _spawnedNails;
+    public float HammerOffsetX => _hammerOffsetX;
+    public float BoardHoleOffsetX => _boardHoleOffsetX;
 
     private void Awake()
     {
         CreateBoardContainer();
         CreateAimLinesIfNeeded();
+    }
+
+    private void Start()
+    {
+        UpdatePositions();
+    }
+
+    private void OnValidate()
+    {
+        UpdatePositions();
+    }
+
+    /// <summary>
+    /// Updates aim line positions and hammer base position based on current offsets and GameConfig.
+    /// Acts as the single source of truth for both Edit mode and Play mode.
+    /// </summary>
+    public void UpdatePositions()
+    {
+        float placeX = GameConfig.PlacingLineX;
+        float strikeX = GameConfig.StrikingLineX;
+
+        if (_placeLine != null)
+        {
+            _placeLine.transform.localPosition = new Vector3(placeX, _boardBaseY, 0);
+            _placeLine.SetPosition(0, new Vector3(0, -_aimLineHalfHeight, 0));
+            _placeLine.SetPosition(1, new Vector3(0, _aimLineHalfHeight, 0));
+        }
+        if (_strikeLine != null)
+        {
+            _strikeLine.transform.localPosition = new Vector3(strikeX, _boardBaseY, 0);
+            _strikeLine.SetPosition(0, new Vector3(0, -_aimLineHalfHeight, 0));
+            _strikeLine.SetPosition(1, new Vector3(0, _aimLineHalfHeight, 0));
+        }
+        if (_hammer != null)
+        {
+            _hammer.SetPosition(new Vector3(strikeX + _hammerOffsetX, _hammerY, 0));
+        }
     }
 
     private void CreateBoardContainer()
@@ -79,8 +128,8 @@ public class RhythmConveyor : MonoBehaviour
         lr.startWidth = 2f;
         lr.endWidth = 2f;
         lr.positionCount = 2;
-        lr.SetPosition(0, new Vector3(0, -90, 0));
-        lr.SetPosition(1, new Vector3(0, 90, 0));
+        lr.SetPosition(0, new Vector3(0, -_aimLineHalfHeight, 0));
+        lr.SetPosition(1, new Vector3(0, _aimLineHalfHeight, 0));
 
         var mat = new Material(Shader.Find("Sprites/Default"));
         lr.material = mat;
@@ -96,25 +145,9 @@ public class RhythmConveyor : MonoBehaviour
     /// </summary>
     public void SetupRound(int totalMeasuresInRound)
     {
+        UpdatePositions();
         float placeX = GameConfig.PlacingLineX;
-        float strikeX = GameConfig.StrikingLineX;
         _conveyorSpeed = GameConfig.ConveyorSpeed;
-
-        // Position aim lines symmetrically
-        if (_placeLine != null)
-        {
-            _placeLine.transform.localPosition = new Vector3(placeX, _boardBaseY, 0);
-        }
-        if (_strikeLine != null)
-        {
-            _strikeLine.transform.localPosition = new Vector3(strikeX, _boardBaseY, 0);
-        }
-
-        // Position hammer at the striking line with +8px offset for sprite visual alignment
-        if (_hammer != null)
-        {
-            _hammer.SetPosition(new Vector3(strikeX + 8f, _hammerY, 0));
-        }
 
         // Clear existing objects
         ClearBoardAndNails();
@@ -123,16 +156,36 @@ public class RhythmConveyor : MonoBehaviour
         int totalBeats = totalMeasuresInRound * GameConfig.BeatsPerMeasure + 8;
 
         // Spawn board blocks under _boardContainer
+        // UX Optimization: Only spawn board blocks for Attack measures (even gameplay measures: 0, 2, 4...)
+        // Prep measures and Defense measures have no board passing the placing line, visually indicating no attacker action.
         var spriteMgr = GameSpriteManager.Instance;
         if (spriteMgr != null)
         {
             spriteMgr.EnsureSpritesLoaded();
-            for (int b = 0; b < totalBeats; b++)
+            int beatsPerMeasure = GameConfig.BeatsPerMeasure;
+            int prepMeasures = GameConfig.PrepMeasures;
+
+            for (int m = 0; m < totalMeasuresInRound; m++)
             {
-                // Each block center is at -b * 64 + 24 to align hole (at x=8) with local x = -b * 64
-                float blockX = -b * GameConfig.PixelsPerBeat + 24f;
-                var blockObj = spriteMgr.SpawnBoardBlock(new Vector3(blockX, 0, 0), 1, 0, _boardContainer.transform);
-                _spawnedBlocks.Add(blockObj);
+                // Prep measures have no board
+                if (m < prepMeasures) continue;
+
+                int gameplayMeasure = m - prepMeasures;
+                // Only even gameplay measures (0, 2, 4...) are attack measures with a board
+                if (gameplayMeasure % 2 != 0) continue;
+
+                for (int b = 0; b < beatsPerMeasure; b++)
+                {
+                    int globalBeat = m * beatsPerMeasure + b;
+                    float blockX = -globalBeat * GameConfig.PixelsPerBeat + _boardHoleOffsetX;
+                    var blockObj = spriteMgr.SpawnBoardBlock(new Vector3(blockX, 0, 0), 1, 0, _boardContainer.transform);
+                    var sr = blockObj.GetComponent<SpriteRenderer>();
+                    if (sr != null)
+                    {
+                        sr.flipX = true;
+                    }
+                    _spawnedBlocks.Add(blockObj);
+                }
             }
         }
 

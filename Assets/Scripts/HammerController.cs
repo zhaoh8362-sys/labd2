@@ -10,6 +10,8 @@ public class HammerController : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer _spriteRenderer;
     [SerializeField] private float _strikeVisualDuration = 0.09f;
+    [Tooltip("Downward vertical punch displacement (pixels) applied during hammer strike.")]
+    [SerializeField] private float _strikePunchY = -3f;
 
     private Coroutine _strikeCoroutine;
     private Vector3 _basePosition;
@@ -59,7 +61,7 @@ public class HammerController : MonoBehaviour
     {
         SetStrikeFrame();
         // Slight downward punch for juicy game feel
-        transform.localPosition = _basePosition + new Vector3(0, -3f, 0);
+        transform.localPosition = _basePosition + new Vector3(0, _strikePunchY, 0);
 
         yield return new WaitForSeconds(_strikeVisualDuration);
 

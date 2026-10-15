@@ -285,6 +285,11 @@ public static class SceneSetupHelper
         // Wire Hammer on Conveyor
         var conveyorSo = new SerializedObject(conveyor);
         conveyorSo.FindProperty("_hammer").objectReferenceValue = hammerCtrl;
+        conveyorSo.FindProperty("_hammerOffsetX").floatValue = 8f;
+        conveyorSo.FindProperty("_boardHoleOffsetX").floatValue = -24f;
+        conveyorSo.FindProperty("_boardBaseY").floatValue = 140f;
+        conveyorSo.FindProperty("_nailY").floatValue = 172f;
+        conveyorSo.FindProperty("_hammerY").floatValue = 212f;
         conveyorSo.ApplyModifiedPropertiesWithoutUndo();
 
         // 3. RhythmGameManager
